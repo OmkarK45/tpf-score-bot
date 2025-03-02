@@ -1,0 +1,17 @@
+services:
+  tpf-score-bot:
+    container_name: tpf-score-bot
+    image: omkark45/tpf-score-bot:latest
+    env_file:
+      - .env
+    restart: unless-stopped
+    networks:
+      - waynecorp
+    ports:
+      - 9099:9099
+    volumes:
+      - /DATA/apps/tpf-score-bot/config/db:/usr/src/app/data
+
+networks:
+  waynecorp:
+    external: true
