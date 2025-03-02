@@ -6,12 +6,12 @@ services:
       - .env
     restart: unless-stopped
     networks:
-      - waynecorp
+      - your_network
     ports:
       - 9099:9099
     volumes:
       - /DATA/apps/tpf-score-bot/config/db:/usr/src/app/data
 
 networks:
-  waynecorp:
+  your_network:
     external: true
